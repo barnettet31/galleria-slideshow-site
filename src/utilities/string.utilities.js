@@ -1,0 +1,1 @@
+export   const constructRoutes = (string)=> string.replaceAll(' ', "");
