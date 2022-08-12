@@ -1,14 +1,22 @@
-import { Link } from "react-router-dom"
-import { constructRoutes } from "../../utilities/string.utilities"
-
-export  const Home = ({artworks})=>{
-  
-    return (
-        <div className="flex flex-col justify-center items-center">
-    <h1 className="text-3xl">Hello Test</h1>
-    {artworks.map(art=><Link key={art.name + Math.random()} to={constructRoutes(art.name)}>{art.name}</Link>
-    )}
+import { Link } from "react-router-dom";
+import { constructRoutes } from "../../utilities/string.utilities";
+import { Image } from "../../components/image/image.component";
+export const Home = ({ artworks }) => {
+  return (
+    <div className="grid gap-10 grid-flow-columns grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      {artworks.map((art) => (
+        <Link
+          key={art.name + Math.random()}
+          to={`/${constructRoutes(art.name)}`}
+        >
+          <div className="bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,0.85)]">
+            <Image
+              path={process.env.PUBLIC_URL + art.images.gallery}
+              altText={art.name}
+            />
+          </div>
+        </Link>
+      ))}
     </div>
-    )
-
-}
+  );
+};
