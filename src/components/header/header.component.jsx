@@ -7,9 +7,9 @@ export const Header = () => {
   const home = useMatch("/") ? "Start" : "Stop";
 
   return (
-    <div className="pt-10 px-10 ">
+    <div className="pt-10 px-10">
       <div className="flex justify-between border-b-med-grey border-b pb-9 items-center">
-        <Link to="/">
+        <Link className="w-2/6" to="/">
           <img
             src={process.env.PUBLIC_URL + "/assets/shared/logo.svg"}
             alt="logo"
@@ -19,7 +19,7 @@ export const Header = () => {
           <LinkText size="large">{home} SlideShow</LinkText>
         </Link>
       </div>
-      <Outlet />{" "}
+      <Outlet />
     </div>
   );
 };

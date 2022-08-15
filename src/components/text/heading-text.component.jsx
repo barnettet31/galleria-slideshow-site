@@ -3,6 +3,8 @@ const headingSizes = {
   medium: "text-lg",
   large: "text-xl",
 };
-export const HeadingText = ({ size, children }) => {
-  return <h2 className={`text-black ${headingSizes[size]}`}>{children}</h2>;
+export const HeadingText = ({ size, children, otherStyles }) => {
+  return (
+    <h2 className={`${otherStyles} ${headingSizes[size]} `}>{children}</h2>
+  );
 };
