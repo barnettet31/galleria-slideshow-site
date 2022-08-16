@@ -1,8 +1,71 @@
+import { Image } from "../../components/image/image.component";
+import { BodyText } from "../../components/text/body-text.component";
+import { DisplayText } from "../../components/text/display-text.component";
+import { HeadingText } from "../../components/text/heading-text.component";
+import { SubHeading } from "../../components/text/subheading.component";
+
 export const Artwork = ({ art, nextItem }) => {
   return (
-    <div className="flex flex-col justify-center items-center">
-      <p className="text-xl">{art.name}</p>
-      <p className="text-xl">{nextItem?.name}</p>
-    </div>
+    <>
+      <div className="flex flex-col justify-between gap-[98px] mt-6 md:mt-10 lg:flex-row lg:gap-6 lg:mt-[100px]">
+        <div className="relative lg:w-1/2">
+          <Image
+            path={process.env.PUBLIC_URL + art.images.hero.large}
+            altText={art.name}
+            className="relative w-[375px] md:w-[475px]"
+          />
+          <div className="group  py-3 5 px-4 w-[152px] cursor-pointer bg-black/75 hover:bg-white/25 flex gap-3.5 absolute top-4 left-4 md:bottom-4 md:top-[auto] items-center justify-center">
+            <Image
+              path={
+                process.env.PUBLIC_URL + "/assets/shared/icon-view-image.svg"
+              }
+              altText="expand image"
+              className="w-3 h-3"
+            />
+            <SubHeading size="small" otherStyles="text-white">
+              VIEW IMAGE
+            </SubHeading>
+          </div>
+          <div className="bg-white w-[80%] absolute px-6 py-4 md:pt-0 md:px-16 bottom-0 md:top-0 md:left-[222px] md:bottom-auto md:pr-1 md:w-[455px] lg:w-[445px] lg:left-96">
+            <HeadingText
+              otherStyles="text-left mb-6 md:text-[54px] md:leading-[64px] whitespace-normal md:w-1/2"
+              size="medium"
+            >
+              {art.name}
+            </HeadingText>
+            <SubHeading size="large">{art.artist.name}</SubHeading>
+          </div>
+          <Image
+            path={process.env.PUBLIC_URL + art.artist.image}
+            altText={art.artist.name}
+            className="absolute md:right-8 md:top-1/3  lg:left-[31.875rem] lg:top-[87.5%] w-16 md:w-auto"
+          />
+        </div>
+        <div className="flex flex-col md:w-[90%] lg:w-1/2 z-10 self-center">
+          <DisplayText otherStyles="text-right -mb-1 lg:text-[200px] lg:text-left lg:py-[10%] lg:-mb-14">
+            {art.year}
+          </DisplayText>
+          <BodyText otherStyles="text-[#7d7d7d] md:w-[9] text-justify lg:w-1/2">
+            {art.description}
+          </BodyText>
+          <a
+            href={art.source}
+            rel="noreferrer"
+            target="_blank"
+            className="text-[#7d7d7d] underline hidden mt-20 lg:block hover:text-black"
+          >
+            Go To Source
+          </a>
+        </div>
+        <a
+          href={art.source}
+          rel="noreferrer"
+          target="_blank"
+          className="text-[#7d7d7d] text-[9px] underline lg:hidden hover:text-black"
+        >
+          Go To Source
+        </a>
+      </div>
+    </>
   );
 };
