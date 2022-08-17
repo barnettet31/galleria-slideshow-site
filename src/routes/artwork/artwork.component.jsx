@@ -70,7 +70,7 @@ export const Artwork = ({ art, nextItem, prevItem }) => {
           </p>
         </div>
         <div className="flex w-[10%] justify-center gap-9">
-          <Link to={prevItem ? constructRoutes(prevItem.name) : "/"}>
+          <Link to={prevItem ? `../${constructRoutes(prevItem.name)}` : "/"}>
             <Image
               path={
                 process.env.PUBLIC_URL + "/assets/shared/icon-back-button.svg"
@@ -78,13 +78,7 @@ export const Artwork = ({ art, nextItem, prevItem }) => {
               altName="none"
             />
           </Link>
-          <Link
-            to={
-              nextItem
-                ? ` ${process.env.PUBLIC_URL}/${constructRoutes(nextItem.name)}`
-                : "/"
-            }
-          >
+          <Link to={nextItem ? `../${constructRoutes(nextItem.name)}` : "/"}>
             <Image
               path={
                 process.env.PUBLIC_URL + "/assets/shared/icon-next-button.svg"

@@ -1,1 +1,2 @@
-export   const constructRoutes = (string)=> string.replaceAll(' ', "");
+export const constructRoutes = (string) =>
+  string.replaceAll(" ", "").replaceAll("é", "");
