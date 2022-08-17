@@ -1,13 +1,15 @@
+import { Link } from "react-router-dom";
 import { Image } from "../../components/image/image.component";
 import { BodyText } from "../../components/text/body-text.component";
 import { DisplayText } from "../../components/text/display-text.component";
 import { HeadingText } from "../../components/text/heading-text.component";
 import { SubHeading } from "../../components/text/subheading.component";
+import { constructRoutes } from "../../utilities/string.utilities";
 
-export const Artwork = ({ art, nextItem }) => {
+export const Artwork = ({ art, nextItem, prevItem }) => {
   return (
-    <>
-      <div className="flex flex-col justify-between gap-[98px] mt-6 md:mt-10 lg:flex-row lg:gap-6 lg:mt-[100px]">
+    <div className="flex flex-col space-around">
+      <div className="flex flex-col pt-10 px-10 justify-between gap-[98px] mt-6 md:mt-10 lg:flex-row lg:gap-6 lg:mt-[100px]">
         <div className="relative lg:w-1/2">
           <Image
             path={process.env.PUBLIC_URL + art.images.hero.large}
@@ -52,20 +54,46 @@ export const Artwork = ({ art, nextItem }) => {
             href={art.source}
             rel="noreferrer"
             target="_blank"
-            className="text-[#7d7d7d] underline hidden mt-20 lg:block hover:text-black"
+            className="text-[#7d7d7d] underline mt-20 lg:block hover:text-black"
           >
             Go To Source
           </a>
         </div>
-        <a
-          href={art.source}
-          rel="noreferrer"
-          target="_blank"
-          className="text-[#7d7d7d] text-[9px] underline lg:hidden hover:text-black"
-        >
-          Go To Source
-        </a>
       </div>
-    </>
+      <div className="w-screen border-t border-t-[#e5e5e5] py-6 px-6 mt-[123px] flex items-center justify-between ">
+        <div>
+          <p className="text-black text-[14px] leading-[17.36px] mb-2">
+            {art.name}
+          </p>
+          <p className="text-black text-[10px] leading-[12px]">
+            {art.artist.name}
+          </p>
+        </div>
+        <div className="flex w-[10%] justify-center gap-9">
+          <Link to={prevItem ? constructRoutes(prevItem.name) : "/"}>
+            <Image
+              path={
+                process.env.PUBLIC_URL + "/assets/shared/icon-back-button.svg"
+              }
+              altName="none"
+            />
+          </Link>
+          <Link
+            to={
+              nextItem
+                ? ` ${process.env.PUBLIC_URL}/${constructRoutes(nextItem.name)}`
+                : "/"
+            }
+          >
+            <Image
+              path={
+                process.env.PUBLIC_URL + "/assets/shared/icon-next-button.svg"
+              }
+              altName="none"
+            />
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 };

@@ -14,7 +14,14 @@ function App() {
           <Route
             key={art.name + Math.random()}
             path={constructRoutes(art.name)}
-            element={<Artwork art={art} nextItem={data[index + 1]} />}
+            element={
+              <Artwork
+                art={art}
+                nextItem={data[index + 1]}
+                index={index}
+                prevItem={data[index - 1]}
+              />
+            }
           />
         ))}
       </Route>

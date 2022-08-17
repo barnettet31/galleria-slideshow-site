@@ -3,7 +3,7 @@ export const HomeContent = ({ artwork }) => {
   return (
     <main className="py-10">
       <section className="hidden lg:grid lg:gap-10 lg:grid-cols-4">
-        <div className="flex flex-col justify-between">
+        <div className="flex flex-col justify-between gap-10">
           <MainThumb
             name={artwork[0].name}
             imageURL={artwork[0].images.gallery}
@@ -29,7 +29,7 @@ export const HomeContent = ({ artwork }) => {
             artist={artwork[11].artist.name}
           />
         </div>
-        <div className="flex flex-col justify-between">
+        <div className="flex flex-col justify-between gap-10">
           <MainThumb
             name={artwork[1].name}
             imageURL={artwork[1].images.gallery}
@@ -55,7 +55,7 @@ export const HomeContent = ({ artwork }) => {
             artist={artwork[12].artist.name}
           />
         </div>
-        <div className="flex flex-col justify-between">
+        <div className="flex flex-col justify-between gap-10">
           <MainThumb
             name={artwork[2].name}
             imageURL={artwork[2].images.gallery}
@@ -81,7 +81,7 @@ export const HomeContent = ({ artwork }) => {
             artist={artwork[13].artist.name}
           />
         </div>
-        <div className="flex flex-col justify-between">
+        <div className="flex flex-col justify-between gap-10">
           <MainThumb
             name={artwork[3].name}
             imageURL={artwork[3].images.gallery}
