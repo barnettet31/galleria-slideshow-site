@@ -8,7 +8,7 @@ export const Header = () => {
 
   return (
     <div className="">
-      <div className="flex justify-between border-b-med-grey border-b pb-9 items-center pt-10 px-10">
+      <header className="flex items-center justify-between px-10 pt-10 border-b border-b-med-grey pb-9">
         <Link className="w-2/6" to="/">
           <img
             src={process.env.PUBLIC_URL + "/assets/shared/logo.svg"}
@@ -18,7 +18,7 @@ export const Header = () => {
         <Link to={home === "Start" ? `/${constructRoutes(data[0].name)}` : "/"}>
           <LinkText size="large">{home} SlideShow</LinkText>
         </Link>
-      </div>
+      </header>
       <Outlet />
     </div>
   );
