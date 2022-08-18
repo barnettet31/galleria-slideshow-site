@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/galleria-slideshow-site/static/css/main.b2555300.css",
-    "main.js": "/galleria-slideshow-site/static/js/main.37bb4614.js",
+    "main.js": "/galleria-slideshow-site/static/js/main.4d4750d6.js",
     "index.html": "/galleria-slideshow-site/index.html",
     "main.b2555300.css.map": "/galleria-slideshow-site/static/css/main.b2555300.css.map",
-    "main.37bb4614.js.map": "/galleria-slideshow-site/static/js/main.37bb4614.js.map"
+    "main.4d4750d6.js.map": "/galleria-slideshow-site/static/js/main.4d4750d6.js.map"
   },
   "entrypoints": [
     "static/css/main.b2555300.css",
-    "static/js/main.37bb4614.js"
+    "static/js/main.4d4750d6.js"
   ]
 }
