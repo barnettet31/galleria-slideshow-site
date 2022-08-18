@@ -38,7 +38,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [My Solution](https://github.com/barnettet31/galleria-slideshow-site)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Live Site](https://barnettet31.github.io/galleria-slideshow-site/)
 
 ## My process
 
