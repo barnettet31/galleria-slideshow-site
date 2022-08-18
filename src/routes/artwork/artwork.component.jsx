@@ -18,6 +18,7 @@ export const Artwork = ({ art, nextItem, prevItem }) => {
             <Image
               path={process.env.PUBLIC_URL + art.images.hero.large}
               className="relative w-[375px] md:w-[475px]"
+              altName={art.name}
             />
             <div
               onClick={handleToggleDim}
@@ -28,6 +29,7 @@ export const Artwork = ({ art, nextItem, prevItem }) => {
                   process.env.PUBLIC_URL + "/assets/shared/icon-view-image.svg"
                 }
                 className="w-3 h-3"
+                altName="none"
               />
               <SubHeading size="small" otherStyles="text-white">
                 VIEW IMAGE
@@ -43,6 +45,7 @@ export const Artwork = ({ art, nextItem, prevItem }) => {
               <SubHeading size="large">{art.artist.name}</SubHeading>
             </div>
             <Image
+              altName={art.artist.name}
               path={process.env.PUBLIC_URL + art.artist.image}
               className="absolute md:right-8 md:top-1/3  lg:left-[31.875rem] lg:top-[87.5%] w-16 md:w-auto"
             />
@@ -104,7 +107,10 @@ export const Artwork = ({ art, nextItem, prevItem }) => {
               Close
             </SubHeading>
           </div>
-          <Image path={process.env.PUBLIC_URL + art.images.gallery} />
+          <Image
+            altName={art.name}
+            path={process.env.PUBLIC_URL + art.images.gallery}
+          />
         </div>
       </div>
     </>

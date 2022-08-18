@@ -10,6 +10,7 @@ export const MainThumb = ({ name, imageURL, text, artist }) => {
         <Image
           className="relative top-0 left-0 w-full h-full"
           path={process.env.PUBLIC_URL + imageURL}
+          altName={name}
         />
         <div className="absolute bottom-0 z-10 w-full px-8 pb-8">
           <HeadingText size="medium" otherStyles="text-white">
