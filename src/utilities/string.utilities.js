@@ -1,2 +1,2 @@
 export const constructRoutes = (string) =>
-  string.replaceAll(" ", "").replaceAll("é", "");
+  string.replaceAll(" ", "").replaceAll("é", "e");

@@ -8,11 +8,10 @@ export const MainThumb = ({ name, imageURL, text, artist }) => {
     <Link to={`/${constructRoutes(name)}`}>
       <div className="after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-gradient-to-b after:from-transparent after:to-black/[0.85] relative">
         <Image
-          className="w-full h-full relative top-0 left-0"
+          className="relative top-0 left-0 w-full h-full"
           path={process.env.PUBLIC_URL + imageURL}
-          altText={name}
         />
-        <div className="absolute bottom-0 z-10 w-full pb-8 px-8">
+        <div className="absolute bottom-0 z-10 w-full px-8 pb-8">
           <HeadingText size="medium" otherStyles="text-white">
             {text}
           </HeadingText>

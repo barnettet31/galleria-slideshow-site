@@ -2,7 +2,7 @@ import { MainThumb } from "./MainThumb.component";
 export const HomeContent = ({ artwork }) => {
   return (
     <main className="py-10">
-      <section className="hidden lg:grid lg:gap-10 lg:grid-cols-4">
+      <section className="hidden lg:grid lg:gap-10 lg:grid-cols-4 px-6">
         <div className="flex flex-col justify-between gap-10">
           <MainThumb
             name={artwork[0].name}
@@ -108,7 +108,7 @@ export const HomeContent = ({ artwork }) => {
           />
         </div>
       </section>
-      <section className="hidden md:grid md:grid-cols-2 md:gap-10 lg:hidden">
+      <section className="hidden md:grid md:grid-cols-2 md:gap-10 lg:hidden px-6">
         <div className="flex flex-col justify-between">
           <MainThumb
             name={artwork[0].name}
@@ -204,7 +204,7 @@ export const HomeContent = ({ artwork }) => {
           />
         </div>
       </section>
-      <section className="grid grid-cols-1 md:hidden lg:hidden">
+      <section className="grid grid-cols-1 md:hidden lg:hidden px-6">
         <div className="flex flex-col justify-between gap-10">
           {artwork.map((art) => (
             <MainThumb
